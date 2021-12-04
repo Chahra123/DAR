@@ -1,19 +1,20 @@
-package tp3.ex1;
+package ex1;
 
-public class Main {
+public class MAIN {
 
+	    public static void main(String[] args) throws InterruptedException {
+        FIRST f=new FIRST();
+        f.start();
+        SECOND s=new SECOND();
+        Thread s1=new Thread(s);
+        s1.start();
+        f.join();
+        System.out.println("STATE OF THE THREAD FIRST: "+f.isAlive());
+        s1.join();
+        System.out.println("STATE OF THE THREAD SECOND: "+s1.isAlive());
+        System.out.println("GAME OVER :D");
+	    }
+	    
 
-    // create a class that extends thread and another one that implements runnable
-    // they should print 'my thread is running' when running
-    // when both terminated, print 'it s over !!'
-
-    public static void main(String[] args) {
-
-
-
-        //output:
-        //my thread is running
-        //my thread is running
-        //it s over !!
-    }
 }
+
